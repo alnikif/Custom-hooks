@@ -1,4 +1,4 @@
-export type useIsFirstRenderProps = {
+export type CodeComponentPropsTypes = {
     text: string,
     language: string,
     showLineNumbers: boolean,

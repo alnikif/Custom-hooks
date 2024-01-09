@@ -20,13 +20,26 @@ const textUseIsFirstRender = "import React, {useEffect, useRef} from 'react';\n"
     "        return true\n" +
     "    }\n" +
     "\n" +
-    "\n" +
     "    return isFirstRender.current;\n" +
     "};";
 
 const languageUseIsFirstRender = 'javascript';
 const showLineNumbersUseIsFirstRender = true;
 const startingLineNumberUseIsFirstRender = 1;
+
+//////////
+const textIsMountedComponent = "import {useEffect, useRef} from 'react';\n" +
+    "\n" +
+    "export const useIsMounted = () => {\n" +
+    "    const isMounted = useRef(false);\n" +
+    "\n" +
+    "    useEffect(() => {\n" +
+    "        isMounted.current = true;\n" +
+    "    })\n" +
+    "\n" +
+    "    return isMounted.current;\n" +
+    "};"
+
 
 const { Header, Sider, Content } = Layout;
 
@@ -42,7 +55,14 @@ const App: React.FC = () => {
             case CustomHooksList.useContainerSize:
                 return <div>Placeholder for useContainerSize component</div>;
             case CustomHooksList.IsMountedComponent:
-                return <IsMountedComponent />;
+                return (
+                    <IsMountedComponent
+                        text={textIsMountedComponent}
+                        language={'javascript'}
+                        showLineNumbers={true}
+                        startingLineNumber={1}
+                    />
+                    )
             case CustomHooksList.useIsFirstRender:
                 return (
                     <UseIsFirstRender

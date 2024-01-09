@@ -1,19 +1,17 @@
-import React from 'react';
+import React, {FC} from 'react';
+import {CodeBlock, dracula} from "react-code-blocks";
+import {CodeComponentPropsTypes} from "../types/CodeComponentTypes";
 
-const IsMountedComponent = () => {
+const IsMountedComponent: FC<CodeComponentPropsTypes> = ({text, language, startingLineNumber, showLineNumbers}) => {
     return (
         <div>
-            {"import {useEffect, useRef} from \"react\";\n" +
-                "\n" +
-                "            export const useIsMounted = () => {\n" +
-                "            const isMounted = useRef(false);\n" +
-                "\n" +
-                "            useEffect(() => {\n" +
-                "            isMounted.current = true;\n" +
-                "        })\n" +
-                "\n" +
-                "            return isMounted.current;\n" +
-                "        }"}
+            <CodeBlock
+                text={text}
+                language={language}
+                showLineNumbers={showLineNumbers}
+                startingLineNumber={startingLineNumber}
+                theme={dracula}
+            />
         </div>
     );
 };
