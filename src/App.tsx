@@ -23,9 +23,6 @@ const textUseIsFirstRender = "import React, {useEffect, useRef} from 'react';\n"
     "    return isFirstRender.current;\n" +
     "};";
 
-const languageUseIsFirstRender = 'javascript';
-const showLineNumbersUseIsFirstRender = true;
-const startingLineNumberUseIsFirstRender = 1;
 
 //////////
 const textIsMountedComponent = "import {useEffect, useRef} from 'react';\n" +
@@ -67,9 +64,9 @@ const App: React.FC = () => {
                 return (
                     <UseIsFirstRender
                         text={textUseIsFirstRender}
-                        language={languageUseIsFirstRender}
-                        showLineNumbers={showLineNumbersUseIsFirstRender}
-                        startingLineNumber={startingLineNumberUseIsFirstRender}
+                        language={'javascript'}
+                        showLineNumbers={true}
+                        startingLineNumber={1}
                     />
                 )
             default:
