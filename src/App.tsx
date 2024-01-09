@@ -1,17 +1,14 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import './index.css';
-import {
-    MenuFoldOutlined,
-    MenuUnfoldOutlined,
-    RocketOutlined,
-} from '@ant-design/icons';
-import { Layout, Menu, Button, theme } from 'antd';
-import { CustomHooksList } from './types/customHooksType';
+import {MenuFoldOutlined, MenuUnfoldOutlined, RocketOutlined,} from '@ant-design/icons';
+import {Button, Layout, Menu, theme} from 'antd';
+import {CustomHooksList} from './types/customHooksType';
 import IsMountedComponent from './components/IsMountedComponent';
 import {UseIsFirstRender} from "./components/UseIsFirstRender";
-import { Title } from "./components/title/Title"
-import {textIsMountedComponent, textUseContainerSize, textUseIsFirstRender} from "./constants";
+import {Title} from "./components/title/Title"
+import {textIsMountedComponent, textUseContainerSize, textUseHover, textUseIsFirstRender} from "./constants";
 import UseContainerSize from "./components/UseContainerSize";
+import UseHover from "./components/UseHover";
 
 const { Header, Sider, Content } = Layout;
 
@@ -45,6 +42,15 @@ const App: React.FC = () => {
                 return (
                     <UseIsFirstRender
                         text={textUseIsFirstRender}
+                        language={'javascript'}
+                        showLineNumbers={true}
+                        startingLineNumber={1}
+                    />
+                )
+            case CustomHooksList.UseHover:
+                return(
+                    <UseHover
+                        text={textUseHover}
                         language={'javascript'}
                         showLineNumbers={true}
                         startingLineNumber={1}

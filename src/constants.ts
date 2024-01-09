@@ -44,4 +44,37 @@ export const textUseContainerSize = "import React, {useCallback, useEffect, useS
     "    }, [ref]);\n" +
     "\n" +
     "    return {setRef, containerSize}\n" +
-    "};"
+    "};";
+
+export const textUseHover = "import React, { useEffect, useState, useRef, useCallback } from 'react';\n" +
+    "\n" +
+    "const UseHover = () => {\n" +
+    "    const [isHover, setIsHover] = useState(false);\n" +
+    "    const ref = useRef<HTMLDivElement | null>(null);\n" +
+    "\n" +
+    "    const handleMouseOver = useCallback(() => {\n" +
+    "        setIsHover(true);\n" +
+    "    }, []);\n" +
+    "\n" +
+    "    const handleMouseLeave = useCallback(() => {\n" +
+    "        setIsHover(false);\n" +
+    "    }, []);\n" +
+    "\n" +
+    "    useEffect(() => {\n" +
+    "        if (!ref.current) return;\n" +
+    "\n" +
+    "        const currentRef = ref.current;\n" +
+    "\n" +
+    "        currentRef.addEventListener('mouseover', handleMouseOver);\n" +
+    "        currentRef.addEventListener('mouseleave', handleMouseLeave);\n" +
+    "\n" +
+    "        return () => {\n" +
+    "            currentRef.removeEventListener('mouseover', handleMouseOver);\n" +
+    "            currentRef.removeEventListener('mouseleave', handleMouseLeave);\n" +
+    "        };\n" +
+    "    }, [handleMouseOver, handleMouseLeave]);\n" +
+    "\n" +
+    "    return { ref, isHover };\n" +
+    "};\n" +
+    "\n" +
+    "export default UseHover;";
