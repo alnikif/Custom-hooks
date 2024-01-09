@@ -9,9 +9,8 @@ import { Layout, Menu, Button, theme } from 'antd';
 import { CustomHooksList } from './types/customHooksType';
 import IsMountedComponent from './components/IsMountedComponent';
 import {UseIsFirstRender} from "./components/UseIsFirstRender";
-import {dracula} from "react-code-blocks";
-
-const text = "import React, {useEffect, useRef} from 'react';\n" +
+import { Title } from "./components/title/Title"
+const textUseIsFirstRender = "import React, {useEffect, useRef} from 'react';\n" +
     "\n" +
     "export const useIsFirstRender = () => {\n" +
     "    const isFirstRender = useRef(true);\n" +
@@ -25,9 +24,9 @@ const text = "import React, {useEffect, useRef} from 'react';\n" +
     "    return isFirstRender.current;\n" +
     "};";
 
-const language = 'javascript';
-const showLineNumbers = true;
-const startingLineNumber = 1;
+const languageUseIsFirstRender = 'javascript';
+const showLineNumbersUseIsFirstRender = true;
+const startingLineNumberUseIsFirstRender = 1;
 
 const { Header, Sider, Content } = Layout;
 
@@ -38,7 +37,6 @@ const App: React.FC = () => {
         token: { colorBgContainer, borderRadiusLG },
     } = theme.useToken();
 
-    // Рендер компонента в зависимости от выбранного пункта меню
     const renderSelectedComponent = () => {
         switch (selectedMenu) {
             case CustomHooksList.useContainerSize:
@@ -48,10 +46,10 @@ const App: React.FC = () => {
             case CustomHooksList.useIsFirstRender:
                 return (
                     <UseIsFirstRender
-                        text={text}
-                        language={language}
-                        showLineNumbers={showLineNumbers}
-                        startingLineNumber={startingLineNumber}
+                        text={textUseIsFirstRender}
+                        language={languageUseIsFirstRender}
+                        showLineNumbers={showLineNumbersUseIsFirstRender}
+                        startingLineNumber={startingLineNumberUseIsFirstRender}
                     />
                 )
             default:
@@ -100,6 +98,7 @@ const App: React.FC = () => {
             </Sider>
             <Layout>
                 <Header style={{ padding: 0, background: colorBgContainer }}>
+
                     <Button
                         type="text"
                         icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
@@ -110,6 +109,7 @@ const App: React.FC = () => {
                             height: 64,
                         }}
                     />
+                    <Title/>
                 </Header>
                 <Content
                     style={{

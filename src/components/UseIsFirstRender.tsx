@@ -1,12 +1,8 @@
 import { CodeBlock, dracula } from "react-code-blocks";
 import {FC} from "react";
+import {useIsFirstRenderProps} from "../types/CodeComponentTypes";
 
-type useIsFirstRenderProps = {
-    text: string,
-    language: string,
-    showLineNumbers: boolean,
-    startingLineNumber: number,
-}
+
 
 export const  UseIsFirstRender: FC<useIsFirstRenderProps> = ({ text, language, showLineNumbers, startingLineNumber }) =>  {
     return (
