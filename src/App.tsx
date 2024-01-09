@@ -6,9 +6,16 @@ import {CustomHooksList} from './types/customHooksType';
 import IsMountedComponent from './components/IsMountedComponent';
 import {UseIsFirstRender} from "./components/UseIsFirstRender";
 import {Title} from "./components/title/Title"
-import {textIsMountedComponent, textUseContainerSize, textUseHover, textUseIsFirstRender} from "./constants";
+import {
+    textIsMountedComponent,
+    textUseContainerSize,
+    textUseCopyToClipboard,
+    textUseHover,
+    textUseIsFirstRender
+} from "./constants";
 import UseContainerSize from "./components/UseContainerSize";
 import UseHover from "./components/UseHover";
+import UseCopyToClipboard from "./components/UseCopyToClipboard";
 
 const { Header, Sider, Content } = Layout;
 
@@ -29,7 +36,7 @@ const App: React.FC = () => {
                         showLineNumbers={true}
                         startingLineNumber={1}/>
                 );
-            case CustomHooksList.IsMountedComponent:
+            case CustomHooksList.useIsMountedComponent:
                 return (
                     <IsMountedComponent
                         text={textIsMountedComponent}
@@ -47,7 +54,7 @@ const App: React.FC = () => {
                         startingLineNumber={1}
                     />
                 )
-            case CustomHooksList.UseHover:
+            case CustomHooksList.useHover:
                 return(
                     <UseHover
                         text={textUseHover}
@@ -55,6 +62,14 @@ const App: React.FC = () => {
                         showLineNumbers={true}
                         startingLineNumber={1}
                     />
+                )
+            case CustomHooksList.useCopyToClipboard:
+                return(
+                    <UseCopyToClipboard
+                        text={textUseCopyToClipboard}
+                        language={'javascript'}
+                        showLineNumbers={true}
+                        startingLineNumber={1}/>
                 )
             default:
                 return null;
@@ -77,9 +92,9 @@ const App: React.FC = () => {
                             label: CustomHooksList.useContainerSize,
                         },
                         {
-                            key: CustomHooksList.IsMountedComponent,
+                            key: CustomHooksList.useIsMountedComponent,
                             icon: <RocketOutlined />,
-                            label: CustomHooksList.IsMountedComponent,
+                            label: CustomHooksList.useIsMountedComponent,
                         },
                         {
                             key: CustomHooksList.useCopyToClipboard,
@@ -87,9 +102,9 @@ const App: React.FC = () => {
                             label: CustomHooksList.useCopyToClipboard,
                         },
                         {
-                            key: CustomHooksList.UseHover,
+                            key: CustomHooksList.useHover,
                             icon: <RocketOutlined />,
-                            label: CustomHooksList.UseHover,
+                            label: CustomHooksList.useHover,
                         },
                         {
                             key: CustomHooksList.useIsFirstRender,

@@ -78,3 +78,23 @@ export const textUseHover = "import React, { useEffect, useState, useRef, useCal
     "};\n" +
     "\n" +
     "export default UseHover;";
+
+export const textUseCopyToClipboard = "import { useState } from 'react';\n" +
+    "\n" +
+    "const useCopyToClipboard = (): [string, (text: string) => void] => {\n" +
+    "    const [value, setValue] = useState('');\n" +
+    "\n" +
+    "    const copy = (text: string) => {\n" +
+    "        navigator.clipboard.writeText(text)\n" +
+    "            .then(() => {\n" +
+    "                setValue(text);\n" +
+    "            })\n" +
+    "            .catch((error) => {\n" +
+    "                console.error('Copy Error: ', error);\n" +
+    "            });\n" +
+    "    };\n" +
+    "\n" +
+    "    return [value, copy];\n" +
+    "};\n" +
+    "\n" +
+    "export default useCopyToClipboard;"

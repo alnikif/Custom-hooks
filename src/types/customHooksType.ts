@@ -2,9 +2,9 @@
 export enum CustomHooksList  {
     useContainerSize = 'useContainerSize',
     useCopyToClipboard = 'useCopyToClipboard',
-    UseHover = 'useHover',
+    useHover = 'useHover',
     useIsFirstRender = 'useIsFirstRender',
-    IsMountedComponent = 'isMountedComponent',
+    useIsMountedComponent = 'useIsMountedComponent',
     useToggle = 'useToggle',
     useLocalStorage = 'useLocalStorage',
 }
