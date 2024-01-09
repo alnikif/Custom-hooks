@@ -3,13 +3,31 @@ import './index.css';
 import {
     MenuFoldOutlined,
     MenuUnfoldOutlined,
-    UploadOutlined,
-    UserOutlined,
-    VideoCameraOutlined,
+    CheckOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu, Button, theme } from 'antd';
 import { CustomHooksList } from './types/customHooksType';
-import IsMountedComponent from './components/IsMountedComponent'; // Импорт компонента
+import IsMountedComponent from './components/IsMountedComponent';
+import {UseIsFirstRender} from "./components/UseIsFirstRender";
+import {dracula} from "react-code-blocks";
+
+const text = "import React, {useEffect, useRef} from 'react';\n" +
+    "\n" +
+    "export const useIsFirstRender = () => {\n" +
+    "    const isFirstRender = useRef(true);\n" +
+    "\n" +
+    "    if(isFirstRender.current){\n" +
+    "        isFirstRender.current = false;\n" +
+    "        return true\n" +
+    "    }\n" +
+    "\n" +
+    "\n" +
+    "    return isFirstRender.current;\n" +
+    "};";
+
+const language = 'javascript';
+const showLineNumbers = true;
+const startingLineNumber = 1;
 
 const { Header, Sider, Content } = Layout;
 
@@ -27,8 +45,15 @@ const App: React.FC = () => {
                 return <div>Placeholder for useContainerSize component</div>;
             case CustomHooksList.IsMountedComponent:
                 return <IsMountedComponent />;
-            case CustomHooksList.useCopyToClipboard:
-                return <div>Placeholder for useCopyToClipboard component</div>;
+            case CustomHooksList.useIsFirstRender:
+                return (
+                    <UseIsFirstRender
+                        text={text}
+                        language={language}
+                        showLineNumbers={showLineNumbers}
+                        startingLineNumber={startingLineNumber}
+                    />
+                )
             default:
                 return null;
         }
@@ -47,18 +72,28 @@ const App: React.FC = () => {
                     items={[
                         {
                             key: CustomHooksList.useContainerSize,
-                            icon: <UserOutlined />,
+                            icon: <CheckOutlined />,
                             label: CustomHooksList.useContainerSize,
                         },
                         {
                             key: CustomHooksList.IsMountedComponent,
-                            icon: <VideoCameraOutlined />,
+                            icon: <CheckOutlined />,
                             label: CustomHooksList.IsMountedComponent,
                         },
                         {
                             key: CustomHooksList.useCopyToClipboard,
-                            icon: <UploadOutlined />,
+                            icon: <CheckOutlined />,
                             label: CustomHooksList.useCopyToClipboard,
+                        },
+                        {
+                            key: CustomHooksList.UseHover,
+                            icon: <CheckOutlined />,
+                            label: CustomHooksList.UseHover,
+                        },
+                        {
+                            key: CustomHooksList.useIsFirstRender,
+                            icon: <CheckOutlined />,
+                            label: CustomHooksList.useIsFirstRender,
                         },
                     ]}
                 />
