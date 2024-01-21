@@ -7,4 +7,5 @@ export enum CustomHooksList  {
     useIsMountedComponent = 'useIsMountedComponent',
     useToggle = 'useToggle',
     useLocalStorage = 'useLocalStorage',
+    useLoading = 'useLoading',
 }

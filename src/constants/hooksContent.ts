@@ -97,4 +97,43 @@ export const textUseCopyToClipboard = "import { useState } from 'react';\n" +
     "    return [value, copy];\n" +
     "};\n" +
     "\n" +
-    "export default useCopyToClipboard;"
+    "export default useCopyToClipboard;";
+
+export const textUseToggle = "import React, {Dispatch, SetStateAction, useState} from 'react';\n" +
+    "\n" +
+    "type ToggleHookReturnType = [boolean, () => void, Dispatch<SetStateAction<boolean>>];\n" +
+    "\n" +
+    "const useToggle = ():ToggleHookReturnType => {\n" +
+    "    const [ value, setValue ] = useState(false);\n" +
+    "\n" +
+    "    const toggle = () => {\n" +
+    "        setValue((value) => !value)\n" +
+    "    }\n" +
+    "\n" +
+    "\n" +
+    "    return [value, toggle, setValue]\n" +
+    "};\n" +
+    "\n" +
+    "export default useToggle;";
+
+export const textUseLoading = "import { useState } from 'react';\n" +
+    "\n" +
+    "interface LoadingHook {\n" +
+    "  isLoading: boolean;\n" +
+    "  startLoading: () => void;\n" +
+    "  stopLoading: () => void;\n" +
+    "}\n" +
+    "\n" +
+    "function useLoading(): LoadingHook {\n" +
+    "  const [isLoading, setLoading] = useState(false);\n" +
+    "\n" +
+    "  const startLoading = (): void => {\n" +
+    "    setLoading(true);\n" +
+    "  };\n" +
+    "\n" +
+    "  const stopLoading = (): void => {\n" +
+    "    setLoading(false);\n" +
+    "  };\n" +
+    "\n" +
+    "  return { isLoading, startLoading, stopLoading };\n" +
+    "}\n";
