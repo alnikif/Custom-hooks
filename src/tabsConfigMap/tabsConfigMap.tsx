@@ -37,5 +37,9 @@ export const tabsConfigMap: Partial<TabsConfigMapType> = {
     [CustomHooksList.useLoading]:{
         icon: <RocketOutlined />,
         label: CustomHooksList.useLoading
+    },
+    [CustomHooksList.useLocalStorage]:{
+        icon: <RocketOutlined />,
+        label: CustomHooksList.useLocalStorage
     }
 };

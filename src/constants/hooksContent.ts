@@ -137,3 +137,23 @@ export const textUseLoading = "import { useState } from 'react';\n" +
     "\n" +
     "  return { isLoading, startLoading, stopLoading };\n" +
     "}\n";
+
+export const textUseLocalStorage = "import { useState } from 'react';\n" +
+    "\n" +
+    "type LocalStorageValue<T> = T | null;\n" +
+    "\n" +
+    "function useLocalStorage<T>(key: string, initialValue: T): [LocalStorageValue<T>, (value: T) => void] {\n" +
+    "  const storedValue = localStorage.getItem(key);\n" +
+    "  const initialValueToUse = storedValue ? JSON.parse(storedValue) : initialValue;\n" +
+    "\n" +
+    "  const [value, setValue] = useState<LocalStorageValue<T>>(initialValueToUse);\n" +
+    "\n" +
+    "  const updateValue = (newValue: T) => {\n" +
+    "    setValue(newValue);\n" +
+    "    localStorage.setItem(key, JSON.stringify(newValue));\n" +
+    "  };\n" +
+    "\n" +
+    "  return [value, updateValue];\n" +
+    "}\n" +
+    "\n" +
+    "export default useLocalStorage;"

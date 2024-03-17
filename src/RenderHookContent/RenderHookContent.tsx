@@ -5,7 +5,7 @@ import {
     textUseContainerSize,
     textUseCopyToClipboard,
     textUseHover,
-    textUseIsFirstRender, textUseLoading, textUseToggle
+    textUseIsFirstRender, textUseLoading, textUseLocalStorage, textUseToggle
 } from "../constants/hooksContent";
 import CodeBlockPrettier from "../CodeBlockPrettier/CodeBlockPrettier";
 import {ViewContext} from "../Providers/ViewProvider";
@@ -27,7 +27,9 @@ const RenderHookContent: React.FC = () => {
         case CustomHooksList.useToggle:
             return <CodeBlockPrettier text={textUseToggle} />;
         case CustomHooksList.useLoading:
-            return <CodeBlockPrettier text={textUseLoading} />
+            return <CodeBlockPrettier text={textUseLoading} />;
+        case CustomHooksList.useLocalStorage:
+            return <CodeBlockPrettier text={textUseLocalStorage} />;
         default:
             return null;
     }
