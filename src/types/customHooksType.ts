@@ -8,4 +8,5 @@ export enum CustomHooksList  {
     useToggle = 'useToggle',
     useLocalStorage = 'useLocalStorage',
     useLoading = 'useLoading',
+    useDebounce = 'useDebounce'
 }

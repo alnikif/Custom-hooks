@@ -157,3 +157,23 @@ export const textUseLocalStorage = "import { useState } from 'react';\n" +
     "}\n" +
     "\n" +
     "export default useLocalStorage;"
+
+export const textUseDebounce = "import { useState, useEffect } from 'react';\n" +
+    "\n" +
+    "function useDebounce<T>(value: T, delay: number): T {\n" +
+    "  const [debouncedValue, setDebouncedValue] = useState<T>(value);\n" +
+    "\n" +
+    "  useEffect(() => {\n" +
+    "    const timer = setTimeout(() => {\n" +
+    "      setDebouncedValue(value);\n" +
+    "    }, delay);\n" +
+    "\n" +
+    "    return () => {\n" +
+    "      clearTimeout(timer);\n" +
+    "    };\n" +
+    "  }, [value, delay]);\n" +
+    "\n" +
+    "  return debouncedValue;\n" +
+    "}\n" +
+    "\n" +
+    "export default useDebounce;\n"

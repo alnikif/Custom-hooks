@@ -8,7 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RenderHookContent/RenderHookContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/RenderHookContent/RenderHookContent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/hooksContent.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/hooksContent.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tabsConfigMap/tabsConfigMap.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/tabsConfigMap/tabsConfigMap.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/customHooksType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/customHooksType.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +64,7 @@
       <workItem from="1704801663189" duration="13716000" />
       <workItem from="1706463726735" duration="461000" />
       <workItem from="1707565935287" duration="65000" />
-      <workItem from="1710707046309" duration="726000" />
+      <workItem from="1710707046309" duration="1260000" />
     </task>
     <servers />
   </component>

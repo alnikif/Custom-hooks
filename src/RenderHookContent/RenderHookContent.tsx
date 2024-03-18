@@ -3,9 +3,12 @@ import {CustomHooksList} from '../types/customHooksType';
 import {
     textIsMountedComponent,
     textUseContainerSize,
-    textUseCopyToClipboard,
+    textUseCopyToClipboard, textUseDebounce,
     textUseHover,
-    textUseIsFirstRender, textUseLoading, textUseLocalStorage, textUseToggle
+    textUseIsFirstRender,
+    textUseLoading,
+    textUseLocalStorage,
+    textUseToggle
 } from "../constants/hooksContent";
 import CodeBlockPrettier from "../CodeBlockPrettier/CodeBlockPrettier";
 import {ViewContext} from "../Providers/ViewProvider";
@@ -30,6 +33,8 @@ const RenderHookContent: React.FC = () => {
             return <CodeBlockPrettier text={textUseLoading} />;
         case CustomHooksList.useLocalStorage:
             return <CodeBlockPrettier text={textUseLocalStorage} />;
+        case CustomHooksList.useDebounce:
+            return <CodeBlockPrettier text={textUseDebounce} />
         default:
             return null;
     }
